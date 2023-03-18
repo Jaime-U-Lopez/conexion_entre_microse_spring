@@ -2,7 +2,7 @@ package com.api.microservi2;
 
 import com.api.microservi2.CapRepository.CapaRepository;
 import com.api.microservi2.Exception.LecturasDatosEx;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -13,9 +13,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 
 @Service
@@ -39,28 +38,33 @@ public class CapaServices {
 
     public String procesarArchivo(Archivo archivo) {
 
-        if (archivo.getTipo().equals("csv")) {
-            List<String> listaRegistros = listarArchivoCsv(archivo);
-            RespuestaArchivo respuesta =procesarLineas(listaRegistros);
-
-
+            List<String> listaRegistros = generarLineasArchivo(archivo);
+            RespuestaArchivo respuesta = procesarLineas(listaRegistros , archivo);
             return respuesta.Respuesta();
 
-        } else if (archivo.getTipo().equals("excel")) {
-            List<String> listaRegistros = listarArchivoCsv(archivo);
-
-            System.out.println("es un archivo de excel ");
-
-            RespuestaArchivo respuesta =procesarLineas(listaRegistros);
-
-            return respuesta.Respuesta();
-        } else {
-            return "es un no es nada  " + archivo.getTipo();
-        }
     }
 
 
-    public List<String> listarArchivoCsv(Archivo archivo) {
+    public List<String> generarLineasArchivo(Archivo archivo) {
+        List<String> listaVacia = new ArrayList<>();
+        String tipo = archivo.getTipo();
+        switch (tipo) {
+            case "csv":
+                listaVacia = archivoCsv(archivo);
+                break;
+            case "excel":
+                listaVacia = archivoExcel(archivo);
+                break;
+            default:
+                return listaVacia;
+        }
+
+        return listaVacia;
+
+
+    }
+
+    public List<String> archivoCsv(Archivo archivo) {
 
         String delimiter = ",";
         List<String> Lineas = new ArrayList<>();
@@ -68,16 +72,14 @@ public class CapaServices {
         try {
             BufferedReader entrada = new BufferedReader(new FileReader(archivo.getRuta()));
             String linea;
-            int contador=0;
-            while ((linea = entrada.readLine()) != null ) {
+            int contador = 0;
+            while ((linea = entrada.readLine()) != null) {
 
-                if(contador>0){
+                if (contador > 0) {
                     Lineas.add(linea);
                 }
                 contador++;
             }
-
-
             entrada.close();
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(System.out);
@@ -90,74 +92,62 @@ public class CapaServices {
     }
 
 
-    public List<String> listarArchivoExcel(Archivo archivo) {
-        List<String> lineasJson = new ArrayList<>();
 
-        try (Workbook workbook = WorkbookFactory.create(new File(archivo.getRuta()))) {
-            Sheet sheet = workbook.getSheetAt(0);
-            int contadorCampos = 0;
 
-            for (Row row : sheet) {
-                Map<String, String> datos = new HashMap<>();
+    public  List<String> archivoExcel(Archivo archivo) {
+        List<String> lines = new ArrayList<>();
 
-                for (Cell cell : row) {
-                    String cellValue = cell.getStringCellValue();
-                    datos.put("campo" + cell.getColumnIndex(), cellValue);
+
+        try (FileInputStream inputStream = new FileInputStream(new File(archivo.getRuta()));
+             Workbook workbook = WorkbookFactory.create(inputStream)) {
+            Sheet sheet = workbook.getSheet("SafetyData");
+            Iterator<Row> rowIterator = sheet.rowIterator();
+            int contador =0;
+            while (rowIterator.hasNext()) {
+
+                    Row row = rowIterator.next();
+                    Iterator<Cell> cellIterator = row.cellIterator();
+                    StringBuilder line = new StringBuilder();
+                    while (cellIterator.hasNext()) {
+                        Cell cell = cellIterator.next();
+                        line.append(cell.toString());
+                        line.append(",");
+                    }
+                if(contador>0){
+                    lines.add(line.toString());
                 }
-
-                // Convertir el objeto Map a una cadena de texto JSON
-                ObjectMapper objectMapper = new ObjectMapper();
-                String datosJson = objectMapper.writeValueAsString(datos);
-
-                // Agregar la cadena de texto JSON a la lista de líneas JSON
-                lineasJson.add(datosJson);
-
-                contadorCampos++;
+                contador++;
             }
-
-
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace(System.out);
-            throw new LecturasDatosEx("Excepcion al listar");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        return lineasJson;
+        return lines;
     }
-
-
-    public RespuestaArchivo procesarLineas(List<String> lineas) {
-        int contadorLineasValidas=0;
-        int contadorLineasinvalidas=0;
+    public RespuestaArchivo procesarLineas(List<String> lineas, Archivo archivo) {
+        int contadorLineasValidas = 0;
+        int contadorLineasinvalidas = 0;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         RestTemplate restTemplate = new RestTemplate();
         try {
             for (String lineaJson : lineas) {
-                Boolean response = restTemplate.postForObject(
-                        "http://localhost:8080/api/v1/archivo-validar",
-                        new HttpEntity<>(lineaJson, headers),
-                                Boolean.class);
-                if(response ==true){
+                Boolean response = restTemplate.postForObject("http://localhost:8080/api/v1/archivo/"+ archivo.getTipo() , new HttpEntity<>(lineaJson, headers), Boolean.class);
+                if (response == true) {
                     contadorLineasValidas++;
-                }else{
+                } else {
                     contadorLineasinvalidas++;
                 }
                 // Procesar la respuesta
             }
 
-            return new RespuestaArchivo(contadorLineasValidas,contadorLineasinvalidas );
+            return new RespuestaArchivo(archivo,contadorLineasValidas, contadorLineasinvalidas );
 
         } catch (Exception e) {
             System.out.println(e);
         }
-        return new RespuestaArchivo(contadorLineasValidas,contadorLineasinvalidas );
+        return new RespuestaArchivo(archivo, contadorLineasValidas, contadorLineasinvalidas );
     }
-
-
-
 
 
 }

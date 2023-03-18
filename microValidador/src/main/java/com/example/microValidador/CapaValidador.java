@@ -1,58 +1,39 @@
 package com.example.microValidador;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class CapaValidador {
 
-/*
-    public boolean validadorArchivo(String lineaArchivo) {
 
-        List<String> contadorLineas = new ArrayList<>();
+    public boolean validarArchivo(String lineaArchivo, String tipo) {
 
-        int contadorTrue = 0;
-        int contadorFalse = 0;
-
-        String delimiter = ",";
-        while (true) {
-            String[] values = lineaArchivo.split(delimiter);
-            if (values != null) {
-                String Correo = values[5];
-                String EMAIL_REGEX = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b";
-                boolean respuesta = Correo.matches(EMAIL_REGEX);
-
-                if (respuesta) {
-                    contadorTrue++;
-                    String respuetasTrue = "True : " + contadorTrue;
-                    contadorLineas.add(respuetasTrue);
-
-                } else {
-                    contadorFalse++;
-                    String respuestasFalse = "False : " + contadorFalse;
-                    contadorLineas.add(respuestasFalse);
-                }
-
-            }
-
-            break;
-
+        Boolean respuesta = false;
+        String tipoSwitch = tipo;
+        switch (tipoSwitch) {
+            case "csv":
+                respuesta = archivoCsv(lineaArchivo);
+                break;
+            case "excel":
+                respuesta = archivoExcel(lineaArchivo);
+                break;
+            default:
+                return respuesta;
         }
 
-        return contadorLineas;
-    } */
+        return respuesta;
 
-    public boolean validarLinea(String lineaArchivo) {
 
+    }
+
+
+    public Boolean archivoCsv(String lineaArchivo) {
+
+        String[] ArrayJobTitle = {"Haematologist", "Phytotherapist", "Building surveyor", "Insurance",
+                "account manager", "Educational psychologist"};
         boolean correoValido = false;
         boolean fechaValida = false;
-
+        boolean jobTitle = false;
         String[] values = lineaArchivo.split(",");
 
         if (values != null) {
@@ -68,7 +49,35 @@ public class CapaValidador {
             }
         }
 
-        return correoValido && fechaValida;
+        for (String item : ArrayJobTitle) {
+
+                String item2 = values[8];
+                if (item.equals(item2) ) {
+                    jobTitle = true;
+                }
+
+        }
+
+        return correoValido && fechaValida && jobTitle;
+    }
+
+
+    public Boolean archivoExcel(String lineaArchivo) {
+        String[] ArrayReportType = {"Near Miss", "Lost Time", "First Aid"};
+        Boolean injuryLocation = false;
+        Boolean reportType = false;
+        String[] filas = lineaArchivo.split(",");
+
+        if (filas[1] != "N/A") {
+            injuryLocation = true;
+        }
+        for (String valor : ArrayReportType) {
+            if (filas[7].equals(valor)  ) {
+                reportType = true;
+            }
+        }
+
+        return injuryLocation && reportType;
     }
 
 }
