@@ -2,6 +2,8 @@ package com.example.microValidador;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @Service
 public class CapaValidador {
 
@@ -49,17 +51,16 @@ public class CapaValidador {
             }
         }
 
-        for (String item : ArrayJobTitle) {
+        String item2 = values[8];
+        boolean JobEnable = Arrays.stream(ArrayJobTitle).anyMatch(item -> item.contains(item2));
 
-                String item2 = values[8];
-                if (item.equals(item2) ) {
-                    jobTitle = true;
-                }
-
+        if (JobEnable) {
+            jobTitle = true;
         }
 
-        return correoValido && fechaValida && jobTitle;
-    }
+
+        return correoValido &&fechaValida &&jobTitle;
+}
 
 
     public Boolean archivoExcel(String lineaArchivo) {
@@ -71,11 +72,15 @@ public class CapaValidador {
         if (filas[1] != "N/A") {
             injuryLocation = true;
         }
-        for (String valor : ArrayReportType) {
-            if (filas[7].equals(valor)  ) {
+
+        String celda= filas[7];
+        boolean reportTypeEnable = Arrays.stream(ArrayReportType)
+                .anyMatch(item -> item.contains(celda));
+
+            if (reportTypeEnable) {
                 reportType = true;
             }
-        }
+
 
         return injuryLocation && reportType;
     }

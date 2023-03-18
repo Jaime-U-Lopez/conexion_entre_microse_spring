@@ -66,7 +66,7 @@ public class CapaServices {
 
     public List<String> archivoCsv(Archivo archivo) {
 
-        String delimiter = ",";
+
         List<String> Lineas = new ArrayList<>();
 
         try {
