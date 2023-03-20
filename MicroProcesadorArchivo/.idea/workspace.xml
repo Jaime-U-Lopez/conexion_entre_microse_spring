@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40e8292b-d0e1-4299-8e8e-2b920b7d578b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Datos/AccesoDatos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Datos/AccesoDatosArchivosImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Exception/AccesosDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Exception/ExcrituraDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Exception/LecturasDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/PeliculasDomain/Pelicula.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Presentacion/CapaVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Servicio/CatalogoPeliculas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/CATALOGO_PELICULAS_LABORATORIO/PELICULA/Servicio/CatalogoPeliculasImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TEMAS_JAVA/src/MANEJO_ARCHIVOS_JAVA/ManejoArchivosJava.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/CapaComponent/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/CapaController/CapController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/CapaRepository/CapRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/CapaService/CapServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/Exception/AccesosDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/Exception/ExcrituraDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/Exception/LecturasDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../micro2/src/main/java/com/example/micro2/capaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio/src/main/java/com/api/microservicio/controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/CapaComponent/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/CapaController/CapController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/CapaRepository/CapRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/CapaService/CapServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/Exception/AccesosDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/Exception/ExcrituraDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../microservicio1/microservicio1/src/main/java/com/example/microservicio1/Exception/LecturasDatosEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-java/personas/src/main/java/com/example/personas/Controller/CapaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-java/personas/src/main/java/com/example/personas/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-java/personas/src/main/java/com/example/personas/services/CapaServicios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend-work-for-send" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend-work-for-send" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/.idea/libraries/postgresql_42_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/CafeteriaPrueba.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/CafeteriaPrueba.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/PruebaKonecta-Cafeteria" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/lib/postgresql-42.5.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/BaseDatos/ConexionBD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/BaseDatos/OperacionesBaseDatos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/BaseDatos/ProductoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/BaseDatos/VentasDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/OperacionInventarios/Inventario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/OperacionInventarios/Producto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/OperacionInventarios/Stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/out/production/CafeteriaPrueba/OperacionInventarios/Ventas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/BaseDatos/ConexionBD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/BaseDatos/OperacionesBaseDatos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/BaseDatos/ProductoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/BaseDatos/VentasDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/OperacionInventarios/Inventario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/OperacionInventarios/Producto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/OperacionInventarios/Stock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/OperacionInventarios/Ventas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/Prueba JAVA (1).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba/src/Uml Cafeteria.drawio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CafeteriaPrueba2/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/out/production/untitled/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/untitled1.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2N3IooO8Wb3l5F75V5Xy20MoHtC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/jaime-lopez/IdeaProjects/microservicio1/microservi2 (1)"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40e8292b-d0e1-4299-8e8e-2b920b7d578b" name="Changes" comment="" />
+      <created>1678886518138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678886518138</updated>
+    </task>
+    <servers />
+  </component>
+</project>
