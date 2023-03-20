@@ -7,7 +7,10 @@ import java.util.Arrays;
 @Service
 public class CapaValidador {
 
+/*
 
+I save informatin Micro"
+ */
     public boolean validarArchivo(String lineaArchivo, String tipo) {
 
         Boolean respuesta = false;
